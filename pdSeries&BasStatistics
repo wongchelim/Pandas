@@ -1,0 +1,119 @@
+#Define data
+
+data = {'Name':pd.Series(['Apple','Xiaomi','Samsung','Google','Huawei','Sony','Jack']),
+   'Founded':pd.Series([1981,1990,1998,1999,1981,1999,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+
+df = pd.DataFrame(data)
+print ("Our data series are:")
+print df
+#   Founded     Name  Rating
+#0     1981    Apple    4.23
+#1     1990   Xiaomi    3.24
+#2     1998  Samsung    3.98
+#3     1999   Google    2.56
+#4     1981   Huawei    3.20
+#5     1999     Sony    4.60
+#6       23     Jack    3.80
+
+#Transform the data from x-axis to y-axis
+>>> print df.T
+#             0       1        2       3       4     5     6
+#Founded   1981    1990     1998    1999    1981  1999    23
+#Name     Apple  Xiaomi  Samsung  Google  Huawei  Sony  Jack
+#Rating    4.23    3.24     3.98    2.56     3.2   4.6   3.8
+
+
+#print the columns data type
+print df.dtypes
+
+#how many rows how many columns
+print df.shape
+
+#how many elements inside the dataframe
+print df.size
+
+#print the first 2 rows
+print df.head(2)
+
+#print the last 2 rows
+print df.tail(2)
+
+
+
+print df
+#   Founded     Name  Rating
+#0     1981    Apple    4.23
+#1     1990   Xiaomi    3.24
+#2     1998  Samsung    3.98
+#3     1999   Google    2.56
+#4     1981   Huawei    3.20
+#5     1999     Sony    4.60
+#6       23     Jack    3.80
+
+
+#Display the sum of all the rows on respective columns
+print df.sum()
+
+#>>> print df.sum()
+#Founded                                     11971
+#Name       AppleXiaomiSamsungGoogleHuaweiSonyJack
+#Rating                                      25.61
+#dtype: object
+
+#the sum of all the columns on respective row. If the column contain numbers else ignore
+print df.sum(1)
+
+#Display the mean of all the row on respective columns
+print df.mean()
+
+#the mean of all the columns on respective row. If the column contain numbers else ignore
+print df.mean()
+
+#standard deviation
+
+#Display the std of all the row on respective columns
+print df.std()
+
+#the std of all the columns on respective row. If the column contain numbers else ignore
+print df.std(1)
+
+
+
+#display the summary of all the number datatype columns
+print df.describe()
+#           Founded    Rating
+#count     7.000000  7.000000
+#mean   1710.142857  3.658571
+#std     744.002336  0.698628
+#min      23.000000  2.560000
+#25%    1981.000000  3.220000
+#50%    1990.000000  3.800000
+#75%    1998.500000  4.105000
+#max    1999.000000  4.600000
+
+#display the summary of all the objects without numbers
+print df.describe(include=['object'])
+#          Name
+#count        7
+#unique       7
+#top     Xiaomi
+#freq         1
+
+
+#display the summary of all the columns
+>>> print df. describe(include='all')
+            Founded    Name    Rating
+count      7.000000       7  7.000000
+unique          NaN       7       NaN
+top             NaN  Xiaomi       NaN
+freq            NaN       1       NaN
+mean    1710.142857     NaN  3.658571
+std      744.002336     NaN  0.698628
+min       23.000000     NaN  2.560000
+25%     1981.000000     NaN  3.220000
+50%     1990.000000     NaN  3.800000
+75%     1998.500000     NaN  4.105000
+max     1999.000000     NaN  4.600000
+>>>
+
