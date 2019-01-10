@@ -1,0 +1,31 @@
+#========================================================================
+#========================================================================
+#Covariance
+#it both set of data are moving in one direction? positive means yes, negative means no.
+#========================================================================
+#========================================================================
+
+import pandas as pd
+import numpy as np
+
+#Define data
+
+
+data1 = {'Stocks':pd.Series([-10,-6,-9,-3,-5,-7,-9])}
+data2 = {'Economy':pd.Series([10,3,8,3,7,10,6])} 
+
+df1 = pd.DataFrame(data1)
+df2 = pd.DataFrame(data2)
+
+print df1['Stocks'].cov(df2['Economy'])
+#-4.833333333333333
+
+data2 = {'Economy':pd.Series([10,6,9,3,5,7,9])}  
+df2 = pd.DataFrame(data2)
+print df1['Stocks'].cov(df2['Economy'])
+#-6.333333333333333 negative show both set of data not moving together in one direction
+
+data2 = {'Economy':pd.Series([-10,-6,-9,-3,-5,-7,-9])}  
+df2 = pd.DataFrame(data2)
+print df1['Stocks'].cov(df2['Economy'])
+#6.333333333333333 positive show both set of data not moving together in one direction
