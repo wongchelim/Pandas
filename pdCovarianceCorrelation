@@ -17,15 +17,23 @@ data2 = {'Economy':pd.Series([10,3,8,3,7,10,6])}
 df1 = pd.DataFrame(data1)
 df2 = pd.DataFrame(data2)
 
-print df1['Stocks'].cov(df2['Economy'])
+print df1['Stocks'].corr(df2['Economy'])
 #-4.833333333333333
+>>> print df1['Stocks'].corr(df2['Economy'])
+#-0.6560001961203529 they not in relationship moving together
+
 
 data2 = {'Economy':pd.Series([10,6,9,3,5,7,9])}  
 df2 = pd.DataFrame(data2)
 print df1['Stocks'].cov(df2['Economy'])
 #-6.333333333333333 negative show both set of data not moving together in one direction
+>>> print df1['Stocks'].corr(df2['Economy'])
+#-1.0 both have no relationship at all
+
 
 data2 = {'Economy':pd.Series([-10,-6,-9,-3,-5,-7,-9])}  
 df2 = pd.DataFrame(data2)
 print df1['Stocks'].cov(df2['Economy'])
 #6.333333333333333 positive show both set of data not moving together in one direction
+print df1['Stocks'].corr(df2['Economy'])
+#1.0 both of them move exactly the same direction
