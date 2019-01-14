@@ -1,0 +1,28 @@
+import pandas as pd
+import numpy as np
+
+#Define data
+
+data = {'Name':pd.Series(['Apple','Xiaomi','Samsung','Google','Huawei','Sony','Jack']),
+   'Founded':pd.Series([1981,1990,1998,1999,1981,1999,23]),
+   'Rating':pd.Series([4.23,3.24,3.98,2.56,3.20,4.6,3.8])}
+
+df1 = pd.DataFrame(data)
+print df1
+print " "
+print " "
+
+df1['RatingRank'] = df1['Rating'].rank(ascending=1)
+print df1
+
+
+>>> df1['RatingRank'] = df1['Rating'].rank(ascending=1)
+>>> print df1
+   Founded     Name  Rating  RatingRank
+0     1981    Apple    4.23         6.0
+1     1990   Xiaomi    3.24         3.0
+2     1998  Samsung    3.98         5.0
+3     1999   Google    2.56         1.0
+4     1981   Huawei    3.20         2.0
+5     1999     Sony    4.60         7.0
+6       23     Jack    3.80         4.0
